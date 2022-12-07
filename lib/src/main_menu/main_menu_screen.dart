@@ -38,6 +38,7 @@ class MainMenuScreen extends StatelessWidget {
                 0.9,
               ],
               colors: [
+<<<<<<< HEAD
                 Color.fromARGB(255, 133, 132, 132),
                 Color.fromARGB(255, 83, 82, 82),
                 Color.fromARGB(255, 56, 56, 56),
@@ -51,10 +52,20 @@ class MainMenuScreen extends StatelessWidget {
               opacity: 0.8
               
             ),
+=======
+                Color.fromARGB(255, 255, 187, 0),
+                Colors.red,
+                Colors.indigo,
+                Colors.teal,
+              ],
+
+            )
+>>>>>>> 50f4ea7 (First commit of puzzle main and screens)
           ),
           child: ResponsiveScreen(
             mainAreaProminence: 0.45,
             squarishMainArea: Center(
+<<<<<<< HEAD
               child: Container(
                 child: Column(
                   children: [
@@ -81,6 +92,21 @@ class MainMenuScreen extends StatelessWidget {
               ),
             ),
 
+=======
+              child: Transform.rotate(
+                angle: -0.1,
+                child: const Text(
+                  'My Puzzle',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontFamily: 'Permanent Marker',
+                    fontSize: 55,
+                    height: 1,
+                  ),
+                ),
+              ),
+            ),
+>>>>>>> 50f4ea7 (First commit of puzzle main and screens)
             rectangularMenuArea: Column(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
