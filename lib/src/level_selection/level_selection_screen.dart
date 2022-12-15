@@ -8,13 +8,17 @@ import 'package:provider/provider.dart';
 
 import '../audio/audio_controller.dart';
 import '../audio/sounds.dart';
+<<<<<<< HEAD
 import '../play_session/appbar_widget.dart';
 import '../play_session/gallery_widget.dart';
+=======
+>>>>>>> 50f4ea7 (First commit of puzzle main and screens)
 import '../player_progress/player_progress.dart';
 import '../style/palette.dart';
 import '../style/responsive_screen.dart';
 import 'levels.dart';
 
+<<<<<<< HEAD
 class LevelSelectionScreen extends StatefulWidget {
   const LevelSelectionScreen({super.key});
 
@@ -37,6 +41,11 @@ class _LevelSelectionScreenState extends State<LevelSelectionScreen> {
     super.initState();
   }
 
+=======
+class LevelSelectionScreen extends StatelessWidget {
+  const LevelSelectionScreen({super.key});
+
+>>>>>>> 50f4ea7 (First commit of puzzle main and screens)
   @override
   Widget build(BuildContext context) {
     final palette = context.watch<Palette>();
@@ -44,6 +53,7 @@ class _LevelSelectionScreenState extends State<LevelSelectionScreen> {
 
     return Scaffold(
       backgroundColor: palette.backgroundLevelSelection,
+<<<<<<< HEAD
       appBar: AppBarWidget(urlImages),
       body: 
       // ResponsiveScreen(
@@ -134,3 +144,51 @@ class _LevelSelectionScreenState extends State<LevelSelectionScreen> {
   }
 }
 
+=======
+      body: ResponsiveScreen(
+        squarishMainArea: Column(
+          children: [
+            const Padding(
+              padding: EdgeInsets.all(16),
+              child: Center(
+                child: Text(
+                  'Select level',
+                  style:
+                      TextStyle(fontFamily: 'Permanent Marker', fontSize: 30),
+                ),
+              ),
+            ),
+            const SizedBox(height: 50),
+            Expanded(
+              child: ListView(
+                children: [
+                  for (final level in gameLevels)
+                    ListTile(
+                      enabled: playerProgress.highestLevelReached >=
+                          level.number - 1,
+                      onTap: () {
+                        final audioController = context.read<AudioController>();
+                        audioController.playSfx(SfxType.buttonTap);
+
+                        GoRouter.of(context)
+                            .go('/play/session/${level.number}');
+                      },
+                      leading: Text(level.number.toString()),
+                      title: Text('Level #${level.number}'),
+                    )
+                ],
+              ),
+            ),
+          ],
+        ),
+        rectangularMenuArea: ElevatedButton(
+          onPressed: () {
+            GoRouter.of(context).pop();
+          },
+          child: const Text('Back'),
+        ),
+      ),
+    );
+  }
+}
+>>>>>>> 50f4ea7 (First commit of puzzle main and screens)

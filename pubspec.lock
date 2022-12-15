@@ -282,6 +282,7 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "3.0.0"
+<<<<<<< HEAD
   get_it:
     dependency: "direct main"
     description:
@@ -289,6 +290,8 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "7.2.0"
+=======
+>>>>>>> 50f4ea7 (First commit of puzzle main and screens)
   glob:
     dependency: transitive
     description:
@@ -513,6 +516,7 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "5.1.0"
+<<<<<<< HEAD
   photo_view:
     dependency: "direct main"
     description:
@@ -520,6 +524,8 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.14.0"
+=======
+>>>>>>> 50f4ea7 (First commit of puzzle main and screens)
   platform:
     dependency: transitive
     description:
