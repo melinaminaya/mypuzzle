@@ -1,10 +1,12 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.game_template">
+    package="com.labute.my_puzzle">
    <application
-        android:label="game_template"
+        android:requestLegacyExternalStorage="true"
+        android:label="my_puzzle"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
+
             android:name=".MainActivity"
             android:exported="true"
             android:launchMode="singleTop"

@@ -11,6 +11,7 @@ import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:game_template/services/apiBack4app_service.dart';
 import 'package:go_router/go_router.dart';
 import 'package:logging/logging.dart';
 import 'package:provider/provider.dart';
@@ -38,6 +39,7 @@ import 'src/style/palette.dart';
 import 'src/style/snack_bar.dart';
 import 'src/win_game/win_game_screen.dart';
 
+
 Future<void> main() async {
   // To enable Firebase Crashlytics, uncomment the following lines and
   // the import statements at the top of this file.
@@ -60,10 +62,11 @@ Future<void> main() async {
     guardedMain,
     crashlytics: crashlytics,
   );
+  
 }
 
 /// Without logging and crash reporting, this would be `void main()`.
-void guardedMain() {
+Future<void> guardedMain() async {
   if (kReleaseMode) {
     // Don't log anything below warnings in production.
     Logger.root.level = Level.WARNING;
@@ -80,6 +83,10 @@ void guardedMain() {
   SystemChrome.setEnabledSystemUIMode(
     SystemUiMode.edgeToEdge,
   );
+  final ApiBack4App apiBack4App = ApiBack4App();
+  //TODO: Allowing back4app api
+  await apiBack4App.apiCommunication();
+
 
   // TODO: When ready, uncomment the following lines to enable integrations.
   //       Read the README for more info on each integration.
@@ -118,8 +125,11 @@ void guardedMain() {
       adsController: adsController,
       gamesServicesController: gamesServicesController,
     ),
+    
   );
 }
+
+
 
 Logger _log = Logger('main.dart');
 
